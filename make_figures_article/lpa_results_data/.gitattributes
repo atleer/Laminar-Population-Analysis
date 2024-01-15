@@ -1,0 +1,7 @@
+LPA_on_CSD_with_fir_rates_from_raw_MUA_all_sessions_all_structures_750ms.npy filter=lfs diff=lfs merge=lfs -text
+LPA_on_exp_raw_MUA_all_sessions_and_structures_1000ms.npy filter=lfs diff=lfs merge=lfs -text
+LPA_on_sim_CSD_narrow_range_of_pen_facs_w_model_v1_fir_rates_2pops.npy filter=lfs diff=lfs merge=lfs -text
+lpa_on_sim_mua_5pops.npy filter=lfs diff=lfs merge=lfs -text
+lpa_on_sim_mua_1pops.npy filter=lfs diff=lfs merge=lfs -text
+LPA_on_sim_CSD_narrow_range_of_pen_facs_w_lpa_est_v1_fir_rates.npy filter=lfs diff=lfs merge=lfs -text
+LPA_on_sim_CSD_0_pen_fac.npy filter=lfs diff=lfs merge=lfs -text
