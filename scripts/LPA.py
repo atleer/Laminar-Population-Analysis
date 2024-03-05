@@ -493,7 +493,7 @@ class LPA_Signal(object):
         
         for paramNr in range(len(self.lb)):
             while L_params[paramNr] < self.lb[paramNr] or  L_params[paramNr] > self.ub[paramNr]:
-                print('Here')
+                #print('Here')
                 L_params[paramNr] = np.random.uniform(self.lb[1],self.ub[1])
             
         
@@ -742,7 +742,7 @@ def _create_rmat( Mmat, muamat, muavar, rneg_factor):
             Mmat:        spatial profiles
             muamat:      MUA signal
             muavar:      variance of the MUA signal
-            rneg_factor: not quite sure about this. Something to do with the limit at which you rectify. I'll find out.
+            rneg_factor: the limit at which you rectify
     
     Output:
             rmat:        firing rates
