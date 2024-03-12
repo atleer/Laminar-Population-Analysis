@@ -14,3 +14,5 @@ All packages needed to run the code are provided in the requirements file. Pleas
 ```
 
 Feel free to send an email to atleeri@ifi.uio.no or atle.rimehaug@gmail.com for any questions or requests.
+
+NB: The experimental MUA dataset is not downsampled and thus too large even for git lfs. You can access the raw ECP data to obtain the experimental MUA yourself at https://portal.brain-map.org/circuits-behavior/visual-coding-neuropixels, or you can reach out to the authors to arange a transfer of the MUA data.
