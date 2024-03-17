@@ -1,0 +1,103 @@
+{
+  "run": {
+    "tstop": 7500.0,
+    "dt": 0.1,
+    "dL": 20.0,
+    "spike_threshold": -15,
+    "nsteps_block": 10000,
+    "overwrite_output_dir": true
+  },
+  "target_simulator": "NEURON",
+  "conditions": {
+    "celsius": 34.0,
+    "v_init": -80
+  },
+  "inputs": {
+    "LGN_spikes": {
+      "input_type": "spikes",
+      "module": "h5",
+      "input_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/inputs/flash/lgn_black_flash_exp_input_NO_ON-OFF_class_10trials_nov_15_short.h5",
+      "node_set": "lgn",
+      "enabled": true
+    },
+    "FB_spikes": {
+      "input_type": "spikes",
+      "module": "h5",
+      "input_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/inputs/flash/fb_from_LM_black_short.h5",
+      "node_set": "fb"
+    },
+    "BKG_spikes": {
+      "input_type": "spikes",
+      "module": "h5",
+      "input_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/inputs/flash/bkg_nest.h5",
+      "node_set": "bkg",
+      "enabled": true
+    }
+  },
+  "output": {
+    "log_file": "/p/scratch/icei-hbp-2020-0004/rimehaug1/V1_network_output/2022_jan_07_black/log.txt",
+    "output_dir": "/p/scratch/icei-hbp-2020-0004/rimehaug1/V1_network_output/2022_jan_07_black",
+    "spikes_file": "/p/scratch/icei-hbp-2020-0004/rimehaug1/V1_network_output/2022_jan_07_black/spikes.h5",
+    "spikes_file_csv": "/p/scratch/icei-hbp-2020-0004/rimehaug1/V1_network_output/2022_jan_07_black/spikes.csv"
+  },
+  "reports": {
+    "ecp": {
+      "cells": {
+        "model_type": "biophysical"
+      },
+      "variable_name": "v",
+      "module": "extracellular",
+      "electrode_positions": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/biophys_components/recXelectrodes/linear_electrode_40um_spacing.csv",
+      "file_name": "ecp.h5",
+      "electrode_channels": "all",
+      "contributions_dir": "/p/scratch/icei-hbp-2020-0004/rimehaug1/V1_network_output/2022_jan_07_black/ecp_contributions"
+    }
+  },
+  "components": {
+    "morphologies_dir": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/biophys_components/morphologies",
+    "synaptic_models_dir": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/biophys_components/synaptic_models",
+    "mechanisms_dir": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/biophys_components/mechanisms",
+    "biophysical_neuron_models_dir": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/biophys_components/biophysical_neuron_templates",
+    "point_neuron_models_dir": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/biophys_components/point_neuron_templates"
+  },
+  "networks": {
+    "nodes": [
+      {
+        "nodes_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/v1_nodes.h5",
+        "node_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/v1_node_types.csv"
+      },
+      {
+        "nodes_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/lgn_nodes.h5",
+        "node_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/lgn_node_types.csv"
+      },
+      {
+        "nodes_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/fb_nodes.h5",
+        "node_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/fb_node_types.csv"
+      },
+      {
+        "nodes_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/bkg_nodes.h5",
+        "node_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/bkg_node_types.csv"
+      }
+    ],
+    "edges": [
+      {
+        "edges_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/v1_v1_edges.h5",
+        "edge_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/v1_v1_edge_types_2021_oct_20.csv"
+      },
+      {
+        "edges_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/lgn_v1_edges.h5",
+        "edge_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/lgn_v1_edge_types.csv"
+      },
+      {
+        "edges_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/fb_v1_edges.h5",
+        "edge_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/fb_v1_edge_types_2021_oct_02.csv"
+      },
+      {
+        "edges_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/bkg_v1_edges.h5",
+        "edge_types_file": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/network/bkg_v1_edge_types.csv"
+      }
+    ]
+  },
+  "config_path": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network/config_2022_jan_07_black.json",
+  "config_dir": "/p/project/icei-hbp-2020-0004/rimehaug1/models/V1_model_Allen_new_check/Biophysical_network"
+}
